@@ -16,4 +16,9 @@ class AppString {
   static String strSplashScreen = "splash screen";
   static String strPasswordLenght =
       "Пароль должен содержать не менее 8 символов.";
+  static String strAlertSignOut = "Вы хотите выйти из своей учетной записи в приложении?";
+  static String strAlert = "запрос";
+  static String strNo = "Нет";
+  static String strYeas = "Да";
+
 }

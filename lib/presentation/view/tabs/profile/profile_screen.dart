@@ -5,6 +5,7 @@ import 'package:auth_test/core/theme/app_icons.dart';
 import 'package:auth_test/core/theme/app_string.dart';
 import 'package:auth_test/core/utils/size_konfig.dart';
 import 'package:auth_test/core/utils/utils.dart';
+import 'package:auth_test/core/widgets/cupertino_alert_dialog.dart';
 import 'package:auth_test/core/widgets/flush_bars.dart';
 import 'package:auth_test/di.dart';
 import 'package:auth_test/presentation/cubit/auth_check/auth_check_cubit.dart';
@@ -59,7 +60,14 @@ class ProfileScreen extends StatelessWidget {
                       children: [
                         SizedBox(width: wi(20)),
                         TextButton(
-                            onPressed: () async => logout(context),
+                            onPressed: () async {
+                              showAlertDialog(context,
+                                  subtitle: AppString.strAlertSignOut,
+                                  title: AppString.strAlert,
+                                  onTapNo: () => Navigator.pop(context),
+                                  onTapYeas: () async => logout(context),
+                                  );
+                            },
                             child: Text(
                               AppString.strSignIn,
                               style: Theme.of(context)
