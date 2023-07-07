@@ -4,5 +4,5 @@ class AppRoutes {
   /// PROJECT ///
   static const splash = '/splash';
   static const authScreen = '/authScreen';
-  static const bottomBar = '/bottomBar';
+  static const mainAppRoute = '/mainAppRoute';
 }

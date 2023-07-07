@@ -3,7 +3,9 @@ import 'package:auth_test/core/routes/app_routes.dart';
 import 'package:auth_test/core/theme/app_theme.dart';
 import 'package:auth_test/core/utils/utils.dart';
 import 'package:auth_test/di.dart';
+import 'package:auth_test/presentation/cubit/auth_check/auth_check_cubit.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -17,7 +19,13 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return  MaterialApp(
+    return MultiBlocProvider(
+      providers: [
+        BlocProvider(
+            create: (context) => inject<AuthCheckCubit>()..checkUserToAuth()),
+         
+      ],
+      child: MaterialApp(
         title: 'Auth-task',
         debugShowCheckedModeBanner: false,
         theme: appThemeData,
@@ -26,7 +34,7 @@ class MyApp extends StatelessWidget {
         builder: (context, child) {
           return ScrollConfiguration(behavior: MyBehavior(), child: child!);
         },
-        initialRoute: AppRoutes.splash,
+        initialRoute: AppRoutes.splash,)
     );
   }
 }

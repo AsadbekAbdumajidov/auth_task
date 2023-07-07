@@ -14,7 +14,7 @@ class RouteGenerate {
         return simpleRoute(const SplashSreen());
       case AppRoutes.authScreen:
         return simpleRoute(const AuthScreen());
-      case AppRoutes.bottomBar:
+      case AppRoutes.mainAppRoute:
         return simpleRoute(const MainPage());
 
       // case AppRoutes.notificationDetail:

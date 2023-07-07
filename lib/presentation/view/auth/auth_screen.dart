@@ -19,19 +19,19 @@ class AuthScreen extends StatefulWidget {
   @override
   State<AuthScreen> createState() => _AuthScreenState();
 }
-
-class _AuthScreenState extends State<AuthScreen> {
   final formKey = GlobalKey<FormState>();
+class _AuthScreenState extends State<AuthScreen> {
+
 
   @override
   Widget build(BuildContext context) {
-    SizeConfig().init(context);
+    
     return BlocProvider(
       create: (context) => inject<AuthCubit>(),
       child: BlocConsumer<AuthCubit, AuthState>(listener: (context, state) {
         if (state.status == Status.SUCCESS) {
           Navigator.pushNamedAndRemoveUntil(
-              context, AppRoutes.bottomBar, (route) => false);
+              context, AppRoutes.mainAppRoute, (route) => false);
         }
         if (state.status == Status.ERROR) {
           showErrorMessage(context, state.failure.getLocalizedMessage(context));

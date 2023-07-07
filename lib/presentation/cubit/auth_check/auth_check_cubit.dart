@@ -6,8 +6,8 @@ import 'package:equatable/equatable.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 part 'auth_check_state.dart';
 
-class AuthCubit extends Cubit<AuthState> {
-  AuthCubit(this._checkUserToAuthUseCase, this._logoutUseCase)
+class AuthCheckCubit extends Cubit<AuthCheckState> {
+  AuthCheckCubit(this._checkUserToAuthUseCase, this._logoutUseCase)
       : super(InitialState());
 
   final CheckUserToAuthUseCase _checkUserToAuthUseCase;
