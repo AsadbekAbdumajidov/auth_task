@@ -1,3 +1,4 @@
+import 'package:auth_test/core/error/error.dart';
 import 'package:auth_test/core/extension/for_context.dart';
 import 'package:auth_test/core/routes/app_routes.dart';
 import 'package:auth_test/core/theme/app_colors.dart';
@@ -10,6 +11,7 @@ import 'package:auth_test/core/widgets/flush_bars.dart';
 import 'package:auth_test/di.dart';
 import 'package:auth_test/presentation/cubit/auth_check/auth_check_cubit.dart';
 import 'package:auth_test/presentation/cubit/progile/profile_cubit.dart';
+import 'package:auth_test/presentation/view/no_internet/no_internet.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/svg.dart';
@@ -24,10 +26,17 @@ class ProfileScreen extends StatelessWidget {
         Navigator.pushNamedAndRemoveUntil(
             context, AppRoutes.mainAppRoute, (route) => false);
       }
+
       if (state.status == Status.ERROR) {
         showErrorMessage(context, state.failure.getLocalizedMessage(context));
       }
     }, builder: (context, state) {
+      if (state.failure is ConnectionFailure) {
+        return NoInternetPage(onTap: () {
+          context.read<ProfileCubit>().profileGet();
+        });
+      }
+
       return Scaffold(
           appBar: AppBar(
             centerTitle: true,
@@ -61,12 +70,13 @@ class ProfileScreen extends StatelessWidget {
                         SizedBox(width: wi(20)),
                         TextButton(
                             onPressed: () async {
-                              showAlertDialog(context,
-                                  subtitle: AppString.strAlertSignOut,
-                                  title: AppString.strAlert,
-                                  onTapNo: () => Navigator.pop(context),
-                                  onTapYeas: () async => logout(context),
-                                  );
+                              showAlertDialog(
+                                context,
+                                subtitle: AppString.strAlertSignOut,
+                                title: AppString.strAlert,
+                                onTapNo: () => Navigator.pop(context),
+                                onTapYeas: () async => logout(context),
+                              );
                             },
                             child: Text(
                               AppString.strSignIn,

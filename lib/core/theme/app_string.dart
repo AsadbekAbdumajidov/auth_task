@@ -16,9 +16,13 @@ class AppString {
   static String strSplashScreen = "splash screen";
   static String strPasswordLenght =
       "Пароль должен содержать не менее 8 символов.";
-  static String strAlertSignOut = "Вы хотите выйти из своей учетной записи в приложении?";
+  static String strAlertSignOut =
+      "Вы хотите выйти из своей учетной записи в приложении?";
   static String strAlert = "запрос";
   static String strNo = "Нет";
   static String strYeas = "Да";
+  static String strLostConnection = "Потерянное соединение";
+  static String strCheackConnection = "Упс, подключение к интернету не найдено. Пожалуйста, проверьте подключение";
+  static String strTryAgain = "Попробуйте еще раз";
 
 }

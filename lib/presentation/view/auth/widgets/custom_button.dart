@@ -24,25 +24,23 @@ class CustomButtonWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return CupertinoButton(
       borderRadius: BorderRadius.circular(2),
-      onPressed:onTap,
+      onPressed: onTap,
       child: Row(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-         isLoading
-                  ? SizedBox(
-                      height: he(36),
-                      width: he(30),
-                      child: const LoadingWidget())
-                  : Padding(
-            padding: EdgeInsets.symmetric(vertical: he(10)),
-            child:  Text(
-              text,
-              style: TextStyle(
-                  fontSize: he(14),
-                  fontWeight: FontWeight.w700,
-                  color: AppColors.white),
-            ),
-          ),
+          isLoading
+              ? SizedBox(
+                  height: he(36), width: he(30), child: const LoadingWidget())
+              : Padding(
+                  padding: EdgeInsets.symmetric(vertical: he(10)),
+                  child: Text(
+                    text,
+                    style: TextStyle(
+                        fontSize: he(14),
+                        fontWeight: FontWeight.w700,
+                        color: AppColors.white),
+                  ),
+                ),
         ],
       ),
       color: AppColors.primaryColor,

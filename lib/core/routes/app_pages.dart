@@ -18,7 +18,6 @@ class RouteGenerate {
         return simpleRoute(const AuthScreen());
       case AppRoutes.mainAppRoute:
         return simpleRoute(const MainPage());
-
       // case AppRoutes.notificationDetail:
       //   return MaterialPageRoute(
       //       builder: (context) => const NotificationDetail(),

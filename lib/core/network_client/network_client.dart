@@ -3,6 +3,8 @@
 import 'dart:async';
 import 'dart:io';
 import 'package:auth_test/core/constants/constants.dart';
+import 'package:auth_test/core/network_client/retry.dart';
+import 'package:connectivity_plus/connectivity_plus.dart';
 import 'package:dio/dio.dart';
 import 'package:flutter/widgets.dart';
 import 'package:shared_preferences/shared_preferences.dart';
@@ -33,6 +35,9 @@ class NetworkClient {
         if (_shouldRetry(error)) {
           try {
             // ---- For forwarding when there is no Internet ----
+            DioConnectivityRequestRetrier(
+                    dio: api, connectivity: Connectivity())
+                .scheduleRequestRetry(error.requestOptions);
           } catch (er) {
             return handler.next(error);
           }
