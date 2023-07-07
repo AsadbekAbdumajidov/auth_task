@@ -1,6 +1,6 @@
 // ignore_for_file: constant_identifier_names
 
-const ATHLETE_BASE_URL = 'http://judogi.backend.abriev1116.uz/';
-const ACCESS_TOKEN_ATHLETE = 'access-token-athlete';
-const REFRESH_TOKEN_ATHLETE = 'refresh-token-athlete';
+const BASE_URL = 'http://45.10.110.181:8080/';
+const ACCESS_TOKEN = 'access-token';
+const REFRESH_TOKEN = 'refresh-token';
 

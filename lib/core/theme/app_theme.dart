@@ -39,7 +39,7 @@ final appThemeData = ThemeData(
     titleMedium: TextStyle(
         fontSize: 26, fontWeight: FontWeight.w700, color: AppColors.black),
     titleSmall: TextStyle(
-        fontSize: 22, fontWeight: FontWeight.w700, color: AppColors.black),
+        fontSize: 24, fontWeight: FontWeight.w700, color: AppColors.black),
     bodyLarge: TextStyle(
         fontSize: 13,
         fontWeight: FontWeight.w600,

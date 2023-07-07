@@ -1,7 +1,7 @@
 import 'package:auth_test/core/extension/for_context.dart';
 import 'package:auth_test/core/theme/app_colors.dart';
 import 'package:auth_test/core/utils/size_konfig.dart';
-import 'package:auth_test/presentation/components/loading_component.dart';
+import 'package:auth_test/core/widgets/loading_widget.dart';
 import 'package:flutter/material.dart';
 
 
