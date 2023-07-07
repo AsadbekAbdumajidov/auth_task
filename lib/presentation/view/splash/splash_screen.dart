@@ -21,7 +21,7 @@ class SplashSreen extends StatelessWidget {
           }
           if (state is UnAuthenticatedState) {
             Navigator.pushNamedAndRemoveUntil(
-                context, AppRoutes.mainAppRoute, (route) => false);
+                context, AppRoutes.authScreen, (route) => false);
           }
         });
       },
