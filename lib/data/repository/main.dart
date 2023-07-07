@@ -8,6 +8,8 @@ import 'package:dartz/dartz.dart';
 import 'package:dio/dio.dart';
 import 'package:flutter/foundation.dart';
 
+// ---- repository source of the Main section ----
+
 class MainRepository implements IMainRepository {
   final ApiClient _apiClient;
   MainRepository(this._apiClient);

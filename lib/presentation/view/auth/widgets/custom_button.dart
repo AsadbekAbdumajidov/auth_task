@@ -3,6 +3,7 @@ import 'package:auth_test/core/utils/size_konfig.dart';
 import 'package:auth_test/core/widgets/loading_widget.dart';
 import 'package:flutter/cupertino.dart';
 
+// ---- the main button to use the application ----
 class CustomButtonWidget extends StatelessWidget {
   const CustomButtonWidget(
       {Key? key,

@@ -1,6 +1,8 @@
 import 'package:equatable/equatable.dart';
 import 'package:flutter/material.dart';
 
+// ---- All errors detected by Flutter are redirected to this page ----
+
 abstract class LocalizedMessage {
   String getLocalizedMessage(BuildContext context);
 }
@@ -29,8 +31,9 @@ class ServerFailure extends Failure {
 
   @override
   String getLocalizedMessage(BuildContext context) =>
-      'Server error ${statusCode ?? null}';
+      'Server error ${statusCode == null ? "" : statusCode}';
 }
+
 class UserNotFound extends Failure {
   const UserNotFound() : super();
 
@@ -45,6 +48,7 @@ class RegistaredFailure extends Failure {
   String getLocalizedMessage(BuildContext context) =>
       'This email is registered';
 }
+
 class ConnectionFailure extends Failure {
   const ConnectionFailure() : super();
 
@@ -52,12 +56,14 @@ class ConnectionFailure extends Failure {
   String getLocalizedMessage(BuildContext context) =>
       'Check internet connection';
 }
+
 class UnknownFailure extends Failure {
   const UnknownFailure() : super();
 
   @override
   String getLocalizedMessage(BuildContext context) => 'Unknown failure';
 }
+
 class CacheFailure extends Failure {
   const CacheFailure() : super();
 

@@ -3,6 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'app_colors.dart';
 
+// ---- the app's theme page ----
+
 final appThemeData = ThemeData(
   
   colorScheme:

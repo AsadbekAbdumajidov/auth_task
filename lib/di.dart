@@ -15,6 +15,15 @@ import 'package:auth_test/presentation/cubit/bottom_nav/bottom_bar_cubit.dart';
 import 'package:auth_test/presentation/cubit/progile/profile_cubit.dart';
 import 'package:get_it/get_it.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+/* 
+This is a simple Service Locator for Dart and Flutter projects,
+There are some additional gifts inspired by Splat.
+It can be used to access InheritedWidget or Provider objects instead
+---------------
+Since Dart supports global (or euphemistic environment) variables, 
+I assign my GetIt instance to a global variable for as easy access as possible.
+-----------
+*/
 
 final inject = GetIt.instance;
 
@@ -36,11 +45,11 @@ Future<void> initDi() async {
       () => AuthRepository(inject(), inject()));
   inject.registerLazySingleton<IMainRepository>(() => MainRepository(inject()));
 
-  // ! local source init
+  // local source init
   var pref = await SharedPreferences.getInstance();
   inject.registerLazySingleton(() => pref);
 
-  /// athlete
+  // remote source init
   inject.registerFactory(() => NetworkClient());
   var dio = await inject<NetworkClient>().init(inject());
   inject.registerFactory(() => ApiClient(dio, BASE_URL));

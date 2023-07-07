@@ -4,12 +4,14 @@ import 'package:auth_test/presentation/view/tabs/main_page.dart';
 import 'package:flutter/material.dart';
 import 'app_routes.dart';
 
+// ---- the navigation control part of the application ----
+
 class RouteGenerate {
   Route? generate(RouteSettings settings) {
     // final args = settings.arguments;
     switch (settings.name) {
+      
       /// PROJECT ///
-
       case AppRoutes.splash:
         return simpleRoute(const SplashSreen());
       case AppRoutes.authScreen:

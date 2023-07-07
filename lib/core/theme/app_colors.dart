@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+// ---- base of application colors ----
+
 class AppColors {
   AppColors._();
   static const backgroundColor = Color.fromRGBO(243, 243, 246, 10);

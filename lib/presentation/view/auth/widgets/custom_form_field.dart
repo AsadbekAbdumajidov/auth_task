@@ -3,6 +3,8 @@ import 'package:auth_test/core/utils/size_konfig.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
+// ---- the main form field to use the application ----
+
 class CustomTextField extends StatelessWidget {
   const CustomTextField(
       {Key? key,

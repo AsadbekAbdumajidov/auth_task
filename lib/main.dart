@@ -20,8 +20,13 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
+    
     return MultiBlocProvider(
       providers: [
+        /* 
+        Merges multiple BlocProvider widgets into one widget tree.
+        MultiBlocProvider improves the readability and eliminates the need to nest multiple BlocProviders.
+        */
         BlocProvider(
             create: (context) => inject<AuthCheckCubit>()..checkUserToAuth()),
         BlocProvider(
@@ -41,7 +46,7 @@ class MyApp extends StatelessWidget {
     );
   }
 }
-
+// ---- to set the general scroll state of the application ----
 class MyBehavior extends ScrollBehavior {
   @override
   ScrollPhysics getScrollPhysics(BuildContext context) =>

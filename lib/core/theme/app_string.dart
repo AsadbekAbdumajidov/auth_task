@@ -1,3 +1,5 @@
+// ---- base of application text ----
+
 class AppString {
   AppString._();
   static String strAuth = "Авторизация";
@@ -11,7 +13,7 @@ class AppString {
   static String strFavorite = "Избранные";
   static String strEmailValidate = "Неверный адрес электронной почты";
   static String strEmptyValidate = "Не должно быть пустым";
-
-static String strPasswordLenght = "Пароль должен содержать не менее 8 символов.";
+  static String strSplashScreen = "splash screen";
+  static String strPasswordLenght =
+      "Пароль должен содержать не менее 8 символов.";
 }
-

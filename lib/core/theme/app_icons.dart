@@ -1,3 +1,6 @@
+
+// ---- base of application icons ----
+
 class AppIcons {
   AppIcons._();
   static const icProfile = "assets/icons/ic_profile.svg";

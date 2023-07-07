@@ -1,5 +1,4 @@
 import 'dart:io';
-
 import 'package:auth_test/core/constants/constants.dart';
 import 'package:auth_test/core/error/error.dart';
 import 'package:auth_test/data/data_source/remote_source/provider.dart';
@@ -10,6 +9,8 @@ import 'package:dio/dio.dart';
 import 'package:flutter/foundation.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import '../../domain/repository/auth.dart';
+
+// ---- repository source of the authorization section ----
 
 class AuthRepository implements IAuthRepository {
   final SharedPreferences _preferences;

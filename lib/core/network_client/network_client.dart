@@ -32,7 +32,7 @@ class NetworkClient {
       onError: (error, handler) async {
         if (_shouldRetry(error)) {
           try {
-            // For forwarding when there is no Internet
+            // ---- For forwarding when there is no Internet ----
           } catch (er) {
             return handler.next(error);
           }
@@ -55,36 +55,14 @@ class NetworkClient {
         return handler.next(error);
       },
     ));
+    // ---- to see in the terminal any information that happens with the connection ----
     api.interceptors.add(LogInterceptor(requestBody: true, responseBody: true));
     return api;
   }
-
-  // Future<void> refreshToken(SharedPreferences preferences) async {
-  //   String refreshToken = preferences.getString(REFRESH_TOKEN) ?? '';
-  //   Dio dio = Dio();
-  //   try {
-  //     debugPrint('AA: $refreshToken');
-  //     final response = await dio
-  //         .post('${BASE_URL}token/refresh/', data: {'refresh': refreshToken});
-  //     if (response.statusCode == 200) {
-  //       RefreshTokenResponse token =
-  //           RefreshTokenResponse.fromJson(response.data);
-  //       debugPrint('TTTTT: ${token.access}');
-  //       await preferences.setString(ACCESS_TOKEN, token.access ?? '');
-  //       await preferences.setString(
-  //           REFRESH_TOKEN, token.refresh ?? refreshToken);
-  //       _token = token.access ?? '';
-  //     }
-  //   } catch (err) {
-  //     debugPrint('EEE:$err');
-  //   }
-  // }
 
   bool _shouldRetry(DioError err) {
     return err.type == DioErrorType.other &&
         err.error != null &&
         err.error is SocketException;
   }
-
- 
 }

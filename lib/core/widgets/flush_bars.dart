@@ -2,6 +2,7 @@ import 'package:another_flushbar/flushbar.dart';
 import 'package:auth_test/core/theme/app_colors.dart';
 import 'package:flutter/material.dart';
 
+// ---- widget for loading the application ----
 
 showErrorMessage(BuildContext bc, String? error, {int duration = 3}) {
   WidgetsBinding.instance.addPostFrameCallback((_) {

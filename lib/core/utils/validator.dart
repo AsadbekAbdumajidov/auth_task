@@ -1,7 +1,9 @@
-/*========================Email Validator==============================================*/
 import 'package:auth_test/core/theme/app_string.dart';
 
+// ---- base of application validator ----
 class Validator {
+/*======================== Email Validator ==============================================*/
+
   static String? validateEmail(String value) {
     if (value.isEmpty) {
       return AppString.strEmptyValidate;
@@ -16,6 +18,7 @@ class Validator {
     }
     return null;
   }
+/*======================== Email Validator ==============================================*/
 
   static String? validatePassword(String value) {
    if (value.isEmpty) {

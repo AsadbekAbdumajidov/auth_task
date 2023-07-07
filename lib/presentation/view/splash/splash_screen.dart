@@ -1,5 +1,6 @@
 import 'dart:async';
 import 'package:auth_test/core/routes/app_routes.dart';
+import 'package:auth_test/core/theme/app_string.dart';
 import 'package:auth_test/core/utils/size_konfig.dart';
 import 'package:auth_test/presentation/cubit/auth_check/auth_check_cubit.dart';
 import 'package:flutter/material.dart';
@@ -26,7 +27,7 @@ class SplashSreen extends StatelessWidget {
       },
       child: Scaffold(
       body: Center(
-        child: Text("splash screen"),
+        child: Text(AppString.strSplashScreen),
       ),)
     );
   }
