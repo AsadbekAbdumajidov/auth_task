@@ -3,12 +3,12 @@ import 'package:auth_test/core/theme/app_colors.dart';
 import 'package:flutter/material.dart';
 
 
-showErrorMessage(BuildContext bc, String error, {int duration = 3}) {
+showErrorMessage(BuildContext bc, String? error, {int duration = 3}) {
   WidgetsBinding.instance.addPostFrameCallback((_) {
     Flushbar(
       title: 'Error',
       backgroundColor: Colors.red,
-      message: error,
+      message: error ?? "",
       flushbarPosition: FlushbarPosition.TOP,
       margin: const EdgeInsets.symmetric(horizontal: 20),
       borderRadius: BorderRadius.circular(20),
@@ -17,11 +17,11 @@ showErrorMessage(BuildContext bc, String error, {int duration = 3}) {
   });
 }
 
-showMessage(BuildContext bc, String message) {
+showMessage(BuildContext bc, String? message) {
   Flushbar(
     title: 'Success',
     backgroundColor: AppColors.red,
-    message: message,
+    message: message ?? "",
     flushbarPosition: FlushbarPosition.TOP,
     margin: const EdgeInsets.symmetric(horizontal: 20),
     borderRadius: BorderRadius.circular(20),
@@ -29,11 +29,11 @@ showMessage(BuildContext bc, String message) {
   ).show(bc);
 }
 
-showBlueMessage(BuildContext bc, String message) {
+showBlueMessage(BuildContext bc, String? message) {
   Flushbar(
     title: 'Success',
     backgroundColor: AppColors.red,
-    message: message,
+    message: message ?? "",
     flushbarPosition: FlushbarPosition.TOP,
     margin: const EdgeInsets.symmetric(horizontal: 20),
     borderRadius: BorderRadius.circular(20),

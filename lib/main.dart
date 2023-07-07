@@ -4,6 +4,7 @@ import 'package:auth_test/core/theme/app_theme.dart';
 import 'package:auth_test/core/utils/utils.dart';
 import 'package:auth_test/di.dart';
 import 'package:auth_test/presentation/cubit/auth_check/auth_check_cubit.dart';
+import 'package:auth_test/presentation/cubit/progile/profile_cubit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -23,6 +24,8 @@ class MyApp extends StatelessWidget {
       providers: [
         BlocProvider(
             create: (context) => inject<AuthCheckCubit>()..checkUserToAuth()),
+        BlocProvider(
+            create: (context) => inject<ProfileCubit>()..profileGet()),
          
       ],
       child: MaterialApp(

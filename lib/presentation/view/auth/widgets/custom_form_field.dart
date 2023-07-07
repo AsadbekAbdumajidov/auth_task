@@ -61,7 +61,7 @@ class CustomTextField extends StatelessWidget {
       controller: textEditingController,
       keyboardType: keyboardType,
       textInputAction: textInputAction,
-      cursorColor: AppColors.secondaryDark,
+      cursorColor: AppColors.primaryColor,
       decoration: InputDecoration(
         suffixIcon: suffixIcon,
         errorText: errorText,
@@ -77,7 +77,7 @@ class CustomTextField extends StatelessWidget {
             .headlineMedium
             ?.copyWith(color: labelColor, fontSize: he(15)),
         fillColor: fillColor ?? AppColors.white,
-        contentPadding: const EdgeInsets.fromLTRB(12, 30, 12, 14),
+        contentPadding: const EdgeInsets.fromLTRB(12, 14, 12, 14),
        
        enabledBorder: const UnderlineInputBorder(
         
@@ -87,7 +87,7 @@ class CustomTextField extends StatelessWidget {
           borderSide: BorderSide(color: AppColors.secondaryDark),
         ),
         focusedBorder: const UnderlineInputBorder(
-          borderSide: BorderSide(color: AppColors.secondaryDark),
+          borderSide: BorderSide(color: AppColors.primaryColor),
         ),
         // errorBorder: const OutlineInputBorder(
         //   borderSide: BorderSide(color: AppColors.red),

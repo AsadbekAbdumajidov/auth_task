@@ -19,13 +19,12 @@ class AuthScreen extends StatefulWidget {
   @override
   State<AuthScreen> createState() => _AuthScreenState();
 }
-  final formKey = GlobalKey<FormState>();
+
+final formKey = GlobalKey<FormState>();
+
 class _AuthScreenState extends State<AuthScreen> {
-
-
   @override
   Widget build(BuildContext context) {
-    
     return BlocProvider(
       create: (context) => inject<AuthCubit>(),
       child: BlocConsumer<AuthCubit, AuthState>(listener: (context, state) {
@@ -51,7 +50,7 @@ class _AuthScreenState extends State<AuthScreen> {
                 Container(
                   color: AppColors.white,
                   child: Padding(
-                    padding: EdgeInsets.symmetric(horizontal: wi(14)),
+                    padding: EdgeInsets.symmetric(horizontal: wi(14),vertical: he(12)),
                     child: Column(
                       children: [
                         CustomTextField(
@@ -89,6 +88,7 @@ class _AuthScreenState extends State<AuthScreen> {
                       SizedBox(height: he(12)),
                       CustomButtonWidget(
                           onTap: () {}, text: AppString.strSignUp),
+                      
                     ],
                   ),
                 ),

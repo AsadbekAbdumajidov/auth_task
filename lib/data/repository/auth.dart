@@ -31,7 +31,7 @@ class AuthRepository implements IAuthRepository {
         return const Left(ConnectionFailure());
       }
       return Left(
-        (e.response?.statusCode == 400)
+        (e.response?.statusCode == 400 )
             ? const UserNotFound()
             : ServerFailure(e.response?.statusCode),
       );

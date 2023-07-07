@@ -29,7 +29,7 @@ class ServerFailure extends Failure {
 
   @override
   String getLocalizedMessage(BuildContext context) =>
-      'Server error $statusCode';
+      'Server error ${statusCode ?? null}';
 }
 class UserNotFound extends Failure {
   const UserNotFound() : super();
